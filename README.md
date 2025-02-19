@@ -1,9 +1,14 @@
 # Case-Study - RStudio
-How does a bike-share navigate speedy success? Is subscription customer important? how to improve the number of them.
+# How does a bike-share navigate speedy success? Is subscription customer important? how to improve the number of them. in this case study, I try to compare two different types of users to figure it out.
 
 
 install.packages('tidyverse')
+
 library(tidyverse)
+
+install.packages("ggplot2")
+
+library(ggplot2)
 
 df_2019_Q1 <- read_csv("Divvy_Trips_2019_Q1.csv")
 
@@ -26,10 +31,6 @@ summary(as.numeric(df_2019_Q1_clean$ride_duration))
 df_2019_Q1_clean <- df_2019_Q1_clean %>% 
   filter(ride_duration > 1 & ride_duration <= 1440)
 summary(as.numeric(df_2019_Q1_clean$ride_duration))
-
-install.packages("ggplot2")
-library(ggplot2)
-
 
 df_2019_Q1_clean$ride_duration <- as.numeric(df_2019_Q1_clean$ride_duration)
 
